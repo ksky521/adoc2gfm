@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var versions = require('../package').version;
+
+//引入外部依赖
+var Commander = require('commander');
+//引入lib
+var convert = require('../index.js');
+Commander.version(versions);
+
+
+
+Commander.command('*')
+    .usage('[filename] [output]')
+    .action(function(filename, output) {
+        convert(filename, output);
+
+    }).on('--help', function() {
+        console.log('  Examples:');
+        console.log();
+        console.log('  adoc2gfm path/to/adoc.text');
+        console.log();
+    });
+
+Commander.parse(process.argv);
+
+
+if (!Commander.args[0]) {
+    process.stdout.write(Commander.helpInformation());
+    Commander.emit('--help');
+}

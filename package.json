@@ -1,6 +1,6 @@
 {
   "name": "adoc2gfm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A adoc markdown syntax to GFM syntax",
   "author": {
     "name": "Theo Wang",
@@ -17,11 +17,18 @@
     "url": "git://github.com/ksky521/adoc2gfm"
   },
   "dependencies": {
+    "read": "1.0.4",
+    "colors": ">=0.6.0-1",
     "commander": "^2.2.0"
   },
   "keywords": [
     "adoc",
     "gfm"
   ],
+  "scripts": {
+    "install": "node ./bin/install",
+    "uninstall": "node ./bin/uninstall"
+  },
+
   "readmeFilename": "README.md"
 }

@@ -1,0 +1,21 @@
+[Version]
+Signature="$CHICAGO$"
+Provider=ksky521@gmail.com, 2013
+
+[DefaultInstall]
+AddReg=Install_AddReg
+
+[DefaultUnInstall]
+DelReg=Uninstall_DelReg
+
+[Uninstall_DelReg]
+hkcr,"Folder\Shell\adoc2gfm\command"
+hkcr,"Folder\Shell\adoc2gfm"
+
+hkcr,"*\Shell\adoc2gfm\command"
+hkcr,"*\Shell\adoc2gfm"
+
+[Install_AddReg]
+
+hkcr,"*\Shell\adoc2gfm",,,"adocתgfm�﷨"
+hkcr,"*\Shell\adoc2gfm\command",,,"""%01%\build.cmd"" ""%%1"""

@@ -17,4 +17,4 @@ goto End
 
 
 :End
-pause
+#pause

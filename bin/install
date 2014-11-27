@@ -11,7 +11,7 @@ var colors = require('colors');
 
 if (process.platform === 'win32') {
     read({
-        prompt: 'Would you like to add ImageMin to your right-click menu [Y/N]',
+        prompt: 'Would you like to add adoc2gfm to your right-click menu [Y/N]',
         default: 'n',
         timeout: 100000
     }, function(err, value) {
@@ -40,10 +40,7 @@ if (process.platform === 'win32') {
 function how2Use() {
     console.log('     _________________| '.bold.green + 'How To Use'.bold.red + ' |_________________'.bold.green);
     console.log('    |   for shell:                                   |'.bold.green);
-    console.log('    |       imagemin file/path                       |'.bold.green);
-    console.log('    |       imagemin file/path -o new/file/path      |'.bold.green);
-    console.log('    |   for nodejs:                                  |'.bold.green);
-    console.log('    |       var imagemin = require("imagemin");      |'.bold.green);
-    console.log('    |       imagemin(filePath, destDir, callback);   |'.bold.green);
+    console.log('    |       adoc2gfm file/path                       |'.bold.green);
+    console.log('    |       adoc2gfm file/path new/file/path      |'.bold.green);
     console.log('    |________________________________________________|'.bold.green);
 }

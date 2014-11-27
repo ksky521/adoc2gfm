@@ -36,7 +36,7 @@ module.exports = function(filename, outfile) {
                     c += '\n```';
                 }
                 content[i] = c;
-            } else if (c.trim() && /^\s{4,}/.test(c)) {
+            } else if (c.trim() && /^\s{4,}/.test(c) && !/^\s{4,}\*/.test(c)) {
                 if (/^\s*[:]{3,}([\w]+)\s*$/.test(c)) {
                     c = c.replace(/^(\s{4,})[:]{3,}(\w+)\s*$/, function(input, b, c) {
                         //替换代码
@@ -75,7 +75,7 @@ module.exports = function(filename, outfile) {
                 tagStart = true;
                 var thead = [];
                 c = c.split('|').map(function(v) {
-                    thead.push('------');
+                    thead.push(new Array(v.length * 2 - 1).join('-'));
                     return v.replace(/^\s*\*|\*\s*$/g, function() {
                         return ''
                     });
@@ -87,6 +87,7 @@ module.exports = function(filename, outfile) {
 
         if (typeof outfile === 'string') {
             fs.writeFile(outfile, content.join('\n'));
+            console.log('生成文件：' + outfile);
         } else {
             console.log(content.join('\n'));
         }

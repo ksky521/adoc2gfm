@@ -1,6 +1,6 @@
 {
   "name": "adoc2gfm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A adoc markdown syntax to GFM syntax",
   "author": {
     "name": "Theo Wang",
